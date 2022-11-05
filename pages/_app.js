@@ -1,7 +1,30 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
+import Nav from "../components/nav/nav";
+import { useState, useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  const [display, setDisplay] = useState("mobile");
+
+  useEffect(() => {
+    // Changes the 'display' state based on the width of the window when resizing
+    const changeView = () => {
+      return window.innerWidth > 767
+        ? setDisplay("desktop")
+        : setDisplay("mobile");
+    };
+    changeView();
+
+    window.addEventListener("resize", () => {
+      changeView();
+    });
+  }, [display]);
+
+  return (
+    <>
+      <Nav view={display} />
+      <Component {...pageProps} />
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;
