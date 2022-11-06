@@ -38,24 +38,6 @@ const Nav = ({ view }) => {
   //   });
   // }, []);
 
-  function links() {
-    return (
-      <>
-        <li>
-          <Link href="/"> Home</Link>
-        </li>
-        <li>
-          <Link href={"/"}> Shop</Link>
-        </li>
-        <li>
-          <Link href={"/"}> Contact</Link>
-        </li>
-        <li>
-          <Link href={"/"}> About</Link>
-        </li>
-      </>
-    );
-  }
   const mobileDisplay = () => {
     /* How to change css properties from within here. */
     const [menuOpen, setMenuOpen] = useState(false);
@@ -63,6 +45,7 @@ const Nav = ({ view }) => {
       setMenuOpen(val);
     };
     useEffect(() => {});
+
     return (
       <div className={`${style.navLinkContainer}`}>
         <button
@@ -84,7 +67,34 @@ const Nav = ({ view }) => {
               >
                 CLOSE
               </button>
-              {links}
+              <li
+                onClick={() => {
+                  toggleMenu(false);
+                }}
+              >
+                <Link href="/"> Home</Link>
+              </li>
+              <li
+                onClick={() => {
+                  toggleMenu(false);
+                }}
+              >
+                <Link href={"/shop"}> Shop</Link>
+              </li>
+              <li
+                onClick={() => {
+                  toggleMenu(false);
+                }}
+              >
+                <Link href={"/contact"}> Contact</Link>
+              </li>
+              <li
+                onClick={() => {
+                  toggleMenu(false);
+                }}
+              >
+                <Link href={"/about"}> About</Link>
+              </li>
             </ul>
           </>
         ) : null}
@@ -93,7 +103,22 @@ const Nav = ({ view }) => {
   };
 
   const desktopDisplay = () => {
-    return <ul className={`${style.desktopMenu} text-xl`}>{links}</ul>;
+    return (
+      <ul className={`${style.desktopMenu} text-xl`}>
+        <li>
+          <Link href="/"> Home</Link>
+        </li>
+        <li>
+          <Link href={"/shop"}> Shop</Link>
+        </li>
+        <li>
+          <Link href={"/contact"}> Contact</Link>
+        </li>
+        <li>
+          <Link href={"/about"}> About</Link>
+        </li>
+      </ul>
+    );
   };
   // mobileView ? mobileDisplay : desktopDisplay;
 
