@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/Home.module.scss";
 
 export default function Home() {
@@ -20,14 +21,18 @@ export default function Home() {
           </p>
           <div
             id="buttonGroup"
-            className="md:w-2/5 w-3/4 flex flex-row justify-evenly"
+            className="w-3/4 md:w-3/5 lg:w-2/5 flex flex-row justify-evenly"
           >
-            <button className="p-1 bg-gray-700 text-white rounded-xl mx-2">
-              Order Now
-            </button>
-            <button className="p-1 rounded-xl border-2 border-solid border-gray-700 backdrop-blur mx-2">
-              Learn More
-            </button>
+            <Link href={"/shop"}>
+              <button className="p-1 bg-gray-700 text-white rounded-xl mx-2">
+                Order Now
+              </button>
+            </Link>
+            <Link href={"/about"}>
+              <button className="p-1 rounded-xl border-2 border-solid border-gray-700 backdrop-blur mx-2">
+                Learn More
+              </button>
+            </Link>
           </div>
         </div>
         <div className={`${styles.heroSlideshow} w-2/3 md:w-1/3`}>
@@ -36,6 +41,54 @@ export default function Home() {
               src={"/ws2.jpg"}
               className={`w-auto object-contain rounded-2xl`}
             />
+          </div>
+        </div>
+      </div>
+      <div id="ourProducts" className="m-auto my-4 text-center">
+        <h1 className={`text-2xl`}>Our Products</h1>
+
+        <div className="flex flex-col items-center justify-evenly my-2">
+          <div
+            className={`my-2 md:my-8 flex flex-col md:flex-row md:even:flex-row-reverse md:text-left md:even:text-right w-5/6 items-center justify-evenly`}
+          >
+            <div id="i-holder" className="w-3/4 md:w-5/12 mx-auto">
+              <img
+                src={"/img.jpg"}
+                className={`w-full object-contain rounded-lg`}
+              />
+            </div>
+            <p className="md:w-4/12 mx-auto mt-1  ">
+              Kitchen Utensils sourced from quality manufacturers. Makes your
+              Kitchen time easier and hassle-free, for longer.
+            </p>
+          </div>
+          <div
+            className={`my-2 md:my-8 flex flex-col md:flex-row md:even:flex-row-reverse md:text-left md:even:text-right w-5/6 items-center justify-evenly`}
+          >
+            <div id="i-holder" className="w-3/4 md:w-5/12 mx-auto">
+              <img
+                src={"/img.jpg"}
+                className={`w-full object-contain rounded-lg`}
+              />
+            </div>
+            <p className="md:w-4/12 mx-auto mt-1  ">
+              Kitchen Utensils sourced from quality manufacturers. Makes your
+              Kitchen time easier and hassle-free, for longer.
+            </p>
+          </div>
+          <div
+            className={`my-2 md:my-8 flex flex-col md:flex-row md:even:flex-row-reverse md:text-left md:even:text-right w-5/6 items-center justify-evenly`}
+          >
+            <div id="i-holder" className="w-3/4 md:w-5/12 mx-auto">
+              <img
+                src={"/img.jpg"}
+                className={`w-full object-contain rounded-lg`}
+              />
+            </div>
+            <p className="md:w-4/12 mx-auto mt-1  ">
+              Kitchen Utensils sourced from quality manufacturers. Makes your
+              Kitchen time easier and hassle-free, for longer.
+            </p>
           </div>
         </div>
       </div>
