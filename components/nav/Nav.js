@@ -124,7 +124,7 @@ const Nav = ({ view }) => {
 
   return (
     <div
-      className={`${style.navBar} p-3 md:p-5 w-full lg:w-[90%] m-auto backdrop-blur bg-white/30 rounded-lg`}
+      className={`${style.navBar} p-3 md:p-5 w-full lg:w-[90%] m-auto backdrop-blur bg-white/30 rounded-lg z-10`}
     >
       {/* <div
         className={`background-blur ${style.backgroundBlur} blur bg-white`}

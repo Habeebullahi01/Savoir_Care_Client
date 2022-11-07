@@ -12,7 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div
-        className={`${styles.hero} bg-mobile-hero md:bg-desktop-hero bg-scroll bg-cover -z-10 flex flex-col-reverse justify-evenly  md:flex-row md:justify-evenly  items-center h-full`}
+        className={`${styles.hero} bg-mobile-hero md:bg-desktop-hero bg-scroll bg-cover flex flex-col-reverse justify-evenly  md:flex-row md:justify-evenly  items-center h-full`}
       >
         <div id="heroText" className={`text-pink-700 md:w-1/2 `}>
           <h1 className="text-3xl md:text-5xl font-bold">Haleemah's E-store</h1>
@@ -23,7 +23,7 @@ export default function Home() {
             id="buttonGroup"
             className="w-3/4 md:w-3/5 lg:w-2/5 flex flex-row justify-evenly"
           >
-            <Link href={"/shop"}>
+            <Link href="/shop">
               <button className="p-1 bg-gray-700 text-white rounded-xl mx-2">
                 Order Now
               </button>
@@ -89,6 +89,67 @@ export default function Home() {
               Kitchen Utensils sourced from quality manufacturers. Makes your
               Kitchen time easier and hassle-free, for longer.
             </p>
+          </div>
+        </div>
+      </div>
+      <div id="pitch" className="m-auto my-4 text-center">
+        <h1 className={`text-2xl`}>Why Us?</h1>
+
+        <div className="flex flex-col md:flex-row flex-wrap items-center justify-evenly my-2">
+          <div
+            className={`my-2 md:my-8 mx-2 w-5/6 md:w-1/4 items-center justify-evenly`}
+          >
+            <div id="i-holder" className="w-3/4 mx-auto">
+              <img
+                src={"/img.jpg"}
+                className={`w-full object-contain rounded-lg`}
+              />
+            </div>
+            <p className="mx-auto mt-1  ">Fast and easy delivery nationwide.</p>
+          </div>
+          <div
+            className={`my-2 md:my-8 mx-2 w-5/6 md:w-1/4 items-center justify-evenly`}
+          >
+            <div id="i-holder" className="w-3/4 mx-auto">
+              <img
+                src={"/img.jpg"}
+                className={`w-full object-contain rounded-lg`}
+              />
+            </div>
+            <p className="mx-auto mt-1  ">Fast and easy delivery nationwide.</p>
+          </div>
+          <div
+            className={`my-2 md:my-8 mx-2 w-5/6 md:w-1/4 items-center justify-evenly`}
+          >
+            <div id="i-holder" className="w-3/4 mx-auto">
+              <img
+                src={"/img.jpg"}
+                className={`w-full object-contain rounded-lg`}
+              />
+            </div>
+            <p className="mx-auto mt-1  ">Fast and easy delivery nationwide.</p>
+          </div>
+          <div
+            className={`my-2 md:my-8 mx-2 w-5/6 md:w-1/4 items-center justify-evenly`}
+          >
+            <div id="i-holder" className="w-3/4 mx-auto">
+              <img
+                src={"/img.jpg"}
+                className={`w-full object-contain rounded-lg`}
+              />
+            </div>
+            <p className="mx-auto mt-1  ">Fast and easy delivery nationwide.</p>
+          </div>
+          <div
+            className={`my-2 md:my-8 mx-2 w-5/6 md:w-1/4 items-center justify-evenly`}
+          >
+            <div id="i-holder" className="w-3/4 mx-auto">
+              <img
+                src={"/img.jpg"}
+                className={`w-full object-contain rounded-lg`}
+              />
+            </div>
+            <p className="mx-auto mt-1  ">Fast and easy delivery nationwide.</p>
           </div>
         </div>
       </div>
