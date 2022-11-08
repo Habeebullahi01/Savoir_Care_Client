@@ -28,11 +28,11 @@ export default function Home() {
                 Order Now
               </button>
             </Link>
-            <Link href={"/about"}>
+            <a href={"#ourProducts"}>
               <button className="p-1 rounded-xl border-2 border-solid border-gray-700 backdrop-blur mx-2">
                 Learn More
               </button>
-            </Link>
+            </a>
           </div>
         </div>
         <div className={`${styles.heroSlideshow} w-2/3 md:w-1/3`}>
@@ -44,10 +44,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div id="ourProducts" className="m-auto my-4 text-center">
+      <div id="ourProducts" className="m-auto my-4 pt-10 lg:py-16 text-center">
         <h1 className={`text-2xl`}>Our Products</h1>
 
-        <div className="flex flex-col items-center justify-evenly my-2">
+        <div className="flex flex-col items-center justify-evenly my-2 mt-8 lg:mt-16">
           <div
             className={`my-2 md:my-8 flex flex-col md:flex-row md:even:flex-row-reverse md:text-left md:even:text-right w-5/6 items-center justify-evenly`}
           >
@@ -92,10 +92,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div id="pitch" className="m-auto my-4 text-center">
+      <div id="pitch" className="m-auto my-4 lg:py-16 text-center">
         <h1 className={`text-2xl`}>Why Us?</h1>
 
-        <div className="flex flex-col md:flex-row flex-wrap items-center justify-evenly my-2">
+        <div className="flex flex-col md:flex-row flex-wrap items-center justify-evenly my-2 mt-8 lg:mt-16">
           <div
             className={`my-2 md:my-8 mx-2 w-5/6 md:w-1/4 items-center justify-evenly`}
           >
@@ -150,6 +150,44 @@ export default function Home() {
               />
             </div>
             <p className="mx-auto mt-1  ">Fast and easy delivery nationwide.</p>
+          </div>
+        </div>
+      </div>
+      <div id="reviews" className="m-auto my-4 lg:py-16 text-center">
+        <h2 className={`text-2xl text-center`}>Reviews</h2>
+        <div className="flex flex-col md:flex-row md:flex-wrap items-center justify-evenly m-auto py-8 lg:my-16">
+          <div className={`m-auto my-4 w-full md:w-1/4 md:mx-2`}>
+            <div
+              className={`w-[70%] md:w-4/6 rounded-t-[12rem] md:rounded-t-[6rem] bg-white h-[20rem] p-8 pt-[4rem] font-bold text-2xl leading-normal m-auto`}
+            >
+              <p>
+                This is what this customer thinks. It's not meant to be long.
+                Something like this is okay.
+              </p>
+            </div>
+            <p className={`text-center text-lg italic`}>Customer Name</p>
+          </div>
+          <div className={`m-auto my-4 w-full md:w-1/4 md:mx-2`}>
+            <div
+              className={`w-[70%] md:w-4/6 rounded-t-[12rem] md:rounded-t-[6rem] bg-white h-[20rem] p-8 pt-[4rem] font-bold text-2xl leading-normal m-auto`}
+            >
+              <p>
+                This is what this customer thinks. It's not meant to be long.
+                Something like this is okay.
+              </p>
+            </div>
+            <p className={`text-center text-lg italic`}>Customer Name</p>
+          </div>
+          <div className={`m-auto my-4 w-full md:w-1/4 md:mx-2`}>
+            <div
+              className={`w-[70%] md:w-4/6 rounded-t-[12rem] md:rounded-t-[6rem] bg-white h-[20rem] p-8 pt-[4rem] font-bold text-2xl leading-normal m-auto`}
+            >
+              <p>
+                This is what this customer thinks. It's not meant to be long.
+                Something like this is okay.
+              </p>
+            </div>
+            <p className={`text-center text-lg italic`}>Customer Name</p>
           </div>
         </div>
       </div>

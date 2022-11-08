@@ -30,4 +30,5 @@ a {
 @tailwind utilities;
 html {
   background-color: cadetblue;
+  scroll-behavior: smooth;
 }
