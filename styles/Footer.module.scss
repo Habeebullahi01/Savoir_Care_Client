@@ -1,0 +1,15 @@
+#footer {
+}
+
+.efield {
+  background-color: transparent;
+  border-bottom: 2px pink solid;
+
+  // margin: 5rem;
+}
+.efield:focus,
+.efield:focus-visible {
+  border: none;
+  border-bottom: 2px solid black;
+  outline: none;
+}

@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import Nav from "../components/nav/nav";
+import Footer from "../components/footer/footer";
 import { useState, useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
@@ -23,6 +24,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Nav view={display} />
       <Component {...pageProps} />
+      <Footer />
     </>
   );
 }

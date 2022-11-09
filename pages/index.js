@@ -156,9 +156,9 @@ export default function Home() {
       <div id="reviews" className="m-auto my-4 lg:py-16 text-center">
         <h2 className={`text-2xl text-center`}>Reviews</h2>
         <div className="flex flex-col md:flex-row md:flex-wrap items-center justify-evenly m-auto py-8 lg:my-16">
-          <div className={`m-auto my-4 w-full md:w-1/4 md:mx-2`}>
+          <div className={`m-auto my-4 w-full md:w-[20rem] md:mx-2`}>
             <div
-              className={`w-[70%] md:w-4/6 rounded-t-[12rem] md:rounded-t-[6rem] bg-white h-[20rem] p-8 pt-[4rem] font-bold text-2xl leading-normal m-auto`}
+              className={`w-[70%] md:w-full rounded-t-[12rem] md:rounded-t-[6rem] bg-white min-h-[20rem] p-8 pt-[4rem] font-bold text-2xl leading-normal m-auto`}
             >
               <p>
                 This is what this customer thinks. It's not meant to be long.
@@ -167,9 +167,9 @@ export default function Home() {
             </div>
             <p className={`text-center text-lg italic`}>Customer Name</p>
           </div>
-          <div className={`m-auto my-4 w-full md:w-1/4 md:mx-2`}>
+          <div className={`m-auto my-4 w-full md:w-[20rem] md:mx-2`}>
             <div
-              className={`w-[70%] md:w-4/6 rounded-t-[12rem] md:rounded-t-[6rem] bg-white h-[20rem] p-8 pt-[4rem] font-bold text-2xl leading-normal m-auto`}
+              className={`w-[70%] md:w-full rounded-t-[12rem] md:rounded-t-[6rem] bg-white min-h-[20rem] p-8 pt-[4rem] font-bold text-2xl leading-normal m-auto`}
             >
               <p>
                 This is what this customer thinks. It's not meant to be long.
@@ -178,9 +178,9 @@ export default function Home() {
             </div>
             <p className={`text-center text-lg italic`}>Customer Name</p>
           </div>
-          <div className={`m-auto my-4 w-full md:w-1/4 md:mx-2`}>
+          <div className={`m-auto my-4 w-full md:w-[20rem] md:mx-2`}>
             <div
-              className={`w-[70%] md:w-4/6 rounded-t-[12rem] md:rounded-t-[6rem] bg-white h-[20rem] p-8 pt-[4rem] font-bold text-2xl leading-normal m-auto`}
+              className={`w-[70%] md:w-full rounded-t-[12rem] md:rounded-t-[6rem] bg-white min-h-[20rem] min p-8 pt-[4rem] font-bold text-2xl leading-normal m-auto`}
             >
               <p>
                 This is what this customer thinks. It's not meant to be long.
