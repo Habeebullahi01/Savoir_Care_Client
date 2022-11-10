@@ -3,10 +3,10 @@ import style from "../../styles/Footer.module.scss";
 
 const Footer = () => {
   return (
-    <>
+    <div className={`bg-pink-700 p-4`}>
       <div
         id="footer"
-        className={`flex flex-col md:flex-row items-start md:items-start justify-evenly`}
+        className={`flex flex-col md:flex-row items-start md:items-start justify-evenly mt-8 mb-4`}
       >
         <div id="quick_links" className={`hidden md:block`}>
           <h1>Quick Links</h1>
@@ -47,7 +47,7 @@ const Footer = () => {
         </div>
       </div>
       <p className={`text-center text-sm font-mono`}>Copyright ©2022 Haleema</p>
-    </>
+    </div>
   );
 };
 
