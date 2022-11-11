@@ -15,7 +15,7 @@ export default function Home() {
         className={`${styles.hero} bg-mobile-hero md:bg-desktop-hero bg-scroll bg-cover flex flex-col-reverse justify-evenly  md:flex-row md:justify-evenly  items-center h-full`}
       >
         <div id="heroText" className={`text-pink-700 md:w-1/2 `}>
-          <h1 className="text-3xl md:text-5xl font-bold">Haleemah's E-store</h1>
+          <h1 className="text-3xl md:text-5xl font-bold">{`Haleemah's E-store`}</h1>
           <p className="text-lg font-medium my-6">
             Bringing you an affordable better life.
           </p>
@@ -37,7 +37,8 @@ export default function Home() {
         </div>
         <div className={`${styles.heroSlideshow} w-2/3 md:w-1/3`}>
           <div className={`w-full h-full`}>
-            <img
+            <Image
+              alt=""
               src={"/ws2.jpg"}
               className={`w-auto object-contain rounded-2xl`}
             />
@@ -52,7 +53,7 @@ export default function Home() {
             className={`my-2 md:my-8 flex flex-col md:flex-row md:even:flex-row-reverse md:text-left md:even:text-right w-5/6 items-center justify-evenly`}
           >
             <div id="i-holder" className="w-3/4 md:w-5/12 mx-auto">
-              <img
+              <Image
                 src={"/img.jpg"}
                 className={`w-full object-contain rounded-lg`}
               />
@@ -66,7 +67,7 @@ export default function Home() {
             className={`my-2 md:my-8 flex flex-col md:flex-row md:even:flex-row-reverse md:text-left md:even:text-right w-5/6 items-center justify-evenly`}
           >
             <div id="i-holder" className="w-3/4 md:w-5/12 mx-auto">
-              <img
+              <Image
                 src={"/img.jpg"}
                 className={`w-full object-contain rounded-lg`}
               />
@@ -80,7 +81,7 @@ export default function Home() {
             className={`my-2 md:my-8 flex flex-col md:flex-row md:even:flex-row-reverse md:text-left md:even:text-right w-5/6 items-center justify-evenly`}
           >
             <div id="i-holder" className="w-3/4 md:w-5/12 mx-auto">
-              <img
+              <Image
                 src={"/img.jpg"}
                 className={`w-full object-contain rounded-lg`}
               />
@@ -100,7 +101,8 @@ export default function Home() {
             className={`my-2 md:my-8 mx-2 w-5/6 md:w-1/4 items-center justify-evenly`}
           >
             <div id="i-holder" className="w-3/4 mx-auto">
-              <img
+              <Image
+                alt=""
                 src={"/img.jpg"}
                 className={`w-full object-contain rounded-lg`}
               />
@@ -111,7 +113,8 @@ export default function Home() {
             className={`my-2 md:my-8 mx-2 w-5/6 md:w-1/4 items-center justify-evenly`}
           >
             <div id="i-holder" className="w-3/4 mx-auto">
-              <img
+              <Image
+                alt=""
                 src={"/img.jpg"}
                 className={`w-full object-contain rounded-lg`}
               />
@@ -122,7 +125,8 @@ export default function Home() {
             className={`my-2 md:my-8 mx-2 w-5/6 md:w-1/4 items-center justify-evenly`}
           >
             <div id="i-holder" className="w-3/4 mx-auto">
-              <img
+              <Image
+                alt=""
                 src={"/img.jpg"}
                 className={`w-full object-contain rounded-lg`}
               />
@@ -133,7 +137,8 @@ export default function Home() {
             className={`my-2 md:my-8 mx-2 w-5/6 md:w-1/4 items-center justify-evenly`}
           >
             <div id="i-holder" className="w-3/4 mx-auto">
-              <img
+              <Image
+                alt=""
                 src={"/img.jpg"}
                 className={`w-full object-contain rounded-lg`}
               />
@@ -144,7 +149,8 @@ export default function Home() {
             className={`my-2 md:my-8 mx-2 w-5/6 md:w-1/4 items-center justify-evenly`}
           >
             <div id="i-holder" className="w-3/4 mx-auto">
-              <img
+              <Image
+                alt=""
                 src={"/img.jpg"}
                 className={`w-full object-contain rounded-lg`}
               />
@@ -161,8 +167,8 @@ export default function Home() {
               className={`w-[70%] md:w-full rounded-t-[12rem] md:rounded-t-[6rem] bg-white min-h-[20rem] p-8 pt-[4rem] font-bold text-2xl leading-normal m-auto`}
             >
               <p>
-                This is what this customer thinks. It's not meant to be long.
-                Something like this is okay.
+                {`This is what this customer thinks. It's not meant to be long.
+                Something like this is okay.`}
               </p>
             </div>
             <p className={`text-center text-lg italic`}>Customer Name</p>
@@ -172,8 +178,8 @@ export default function Home() {
               className={`w-[70%] md:w-full rounded-t-[12rem] md:rounded-t-[6rem] bg-white min-h-[20rem] p-8 pt-[4rem] font-bold text-2xl leading-normal m-auto`}
             >
               <p>
-                This is what this customer thinks. It's not meant to be long.
-                Something like this is okay.
+                {`This is what this customer thinks. It's not meant to be long.
+                Something like this is okay.`}
               </p>
             </div>
             <p className={`text-center text-lg italic`}>Customer Name</p>
@@ -183,8 +189,8 @@ export default function Home() {
               className={`w-[70%] md:w-full rounded-t-[12rem] md:rounded-t-[6rem] bg-white min-h-[20rem] min p-8 pt-[4rem] font-bold text-2xl leading-normal m-auto`}
             >
               <p>
-                This is what this customer thinks. It's not meant to be long.
-                Something like this is okay.
+                {`This is what this customer thinks. It's not meant to be long.
+                Something like this is okay.`}
               </p>
             </div>
             <p className={`text-center text-lg italic`}>Customer Name</p>

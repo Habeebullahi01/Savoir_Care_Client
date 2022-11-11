@@ -38,7 +38,7 @@ const Nav = ({ view }) => {
   //   });
   // }, []);
 
-  const mobileDisplay = () => {
+  const MobileDisplay = () => {
     /* How to change css properties from within here. */
     const [menuOpen, setMenuOpen] = useState(false);
     const toggleMenu = (val) => {
@@ -93,7 +93,7 @@ const Nav = ({ view }) => {
                   toggleMenu(false);
                 }}
               >
-                <Link href={"/about"}> About</Link>
+                <Link href={"#"}> Account</Link>
               </li>
             </ul>
           </>
@@ -102,7 +102,7 @@ const Nav = ({ view }) => {
     );
   };
 
-  const desktopDisplay = () => {
+  const DesktopDisplay = () => {
     return (
       <ul className={`${style.desktopMenu} text-xl`}>
         <li>
@@ -115,7 +115,7 @@ const Nav = ({ view }) => {
           <Link href={"/contact"}> Contact</Link>
         </li>
         <li>
-          <Link href={"/about"}> About</Link>
+          <Link href={"#"}> Account</Link>
         </li>
       </ul>
     );
@@ -130,7 +130,7 @@ const Nav = ({ view }) => {
         className={`background-blur ${style.backgroundBlur} blur bg-white`}
       ></div> */}
       <h2 className="text-xl">Haleema</h2>
-      {view == "mobile" ? mobileDisplay() : desktopDisplay()}
+      {view === "mobile" ? MobileDisplay() : DesktopDisplay()}
     </div>
   );
 };

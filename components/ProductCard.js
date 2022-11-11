@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import Image from "next/image";
 const ProductCard = () => {
   return (
     <Link href={`/shop/product/[id]`} as={`/shop/product/903`}>
@@ -7,7 +7,7 @@ const ProductCard = () => {
         className={`w-[10rem] h-[13rem] xl:w-[15%] bg-slate-500 p-2 rounded-xl m-2`}
       >
         <div className={`w-full h-2/3`}>
-          <img
+          <Image
             src="/img.jpg"
             alt="product"
             title="Product Name"
