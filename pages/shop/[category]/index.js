@@ -9,15 +9,17 @@ const Category = () => {
   return (
     <>
       <Head>
-        <title>Shop - {category}</title>
+        <title>{`Shop - ${category}`}</title>
       </Head>
-      <h1>This is the {category} section of the Shop. </h1>
-      <ProductList />
+      <div className={`my-4`}>
+        <h1>This is the {category} section of the Shop. </h1>
+        <ProductList />
+      </div>
       {/* PAGINATION CONTROLS */}
     </>
   );
 };
-
+// WRAP IN `my-4` CLASSED DIV
 export default Category;
 
 /* 
