@@ -35,9 +35,11 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className={`${styles.heroSlideshow} w-2/3 md:w-1/3`}>
-          <div className={`w-full h-full`}>
+        <div className={`${styles.heroSlideshow} w-2/3 md:w-1/3 h-[40rem]`}>
+          <div className={`w-full h-full relative`}>
             <Image
+              objectFit="contain"
+              layout="fill"
               alt=""
               src={"/ws2.jpg"}
               className={`w-auto object-contain rounded-2xl`}
@@ -52,8 +54,13 @@ export default function Home() {
           <div
             className={`my-2 md:my-8 flex flex-col md:flex-row md:even:flex-row-reverse md:text-left md:even:text-right w-5/6 items-center justify-evenly`}
           >
-            <div id="i-holder" className="w-3/4 md:w-5/12 mx-auto">
+            <div
+              id="i-holder"
+              className="w-3/4 md:w-5/12 md:h-[20rem] h-[15rem] mx-auto relative"
+            >
               <Image
+                alt=""
+                layout="fill"
                 src={"/img.jpg"}
                 className={`w-full object-contain rounded-lg`}
               />
@@ -66,8 +73,13 @@ export default function Home() {
           <div
             className={`my-2 md:my-8 flex flex-col md:flex-row md:even:flex-row-reverse md:text-left md:even:text-right w-5/6 items-center justify-evenly`}
           >
-            <div id="i-holder" className="w-3/4 md:w-5/12 mx-auto">
+            <div
+              id="i-holder"
+              className="w-3/4 md:w-5/12 md:h-[20rem] h-[15rem] mx-auto relative"
+            >
               <Image
+                alt=""
+                layout="fill"
                 src={"/img.jpg"}
                 className={`w-full object-contain rounded-lg`}
               />
@@ -80,8 +92,13 @@ export default function Home() {
           <div
             className={`my-2 md:my-8 flex flex-col md:flex-row md:even:flex-row-reverse md:text-left md:even:text-right w-5/6 items-center justify-evenly`}
           >
-            <div id="i-holder" className="w-3/4 md:w-5/12 mx-auto">
+            <div
+              id="i-holder"
+              className="w-3/4 md:w-5/12 md:h-[20rem] h-[15rem] mx-auto relative"
+            >
               <Image
+                alt=" "
+                layout="fill"
                 src={"/img.jpg"}
                 className={`w-full object-contain rounded-lg`}
               />
@@ -100,8 +117,9 @@ export default function Home() {
           <div
             className={`my-2 md:my-8 mx-2 w-5/6 md:w-1/4 items-center justify-evenly`}
           >
-            <div id="i-holder" className="w-3/4 mx-auto">
+            <div id="i-holder" className=" w-3/4 h-[15rem] mx-auto relative">
               <Image
+                layout="fill"
                 alt=""
                 src={"/img.jpg"}
                 className={`w-full object-contain rounded-lg`}
@@ -112,8 +130,9 @@ export default function Home() {
           <div
             className={`my-2 md:my-8 mx-2 w-5/6 md:w-1/4 items-center justify-evenly`}
           >
-            <div id="i-holder" className="w-3/4 mx-auto">
+            <div id="i-holder" className=" w-3/4 h-[15rem] mx-auto relative">
               <Image
+                layout="fill"
                 alt=""
                 src={"/img.jpg"}
                 className={`w-full object-contain rounded-lg`}
@@ -124,8 +143,22 @@ export default function Home() {
           <div
             className={`my-2 md:my-8 mx-2 w-5/6 md:w-1/4 items-center justify-evenly`}
           >
-            <div id="i-holder" className="w-3/4 mx-auto">
+            <div id="i-holder" className=" w-3/4 h-[15rem] mx-auto relative">
               <Image
+                layout="fill"
+                alt=""
+                src={"/ws2.jpg"}
+                className={`w-full object-contain rounded-lg`}
+              />
+            </div>
+            <p className="mx-auto mt-1  ">Fast and easy delivery nationwide.</p>
+          </div>
+          <div
+            className={`my-2 md:my-8 mx-2 w-5/6 md:w-1/4 items-center justify-evenly`}
+          >
+            <div id="i-holder" className=" w-3/4 h-[15rem] mx-auto relative">
+              <Image
+                layout="fill"
                 alt=""
                 src={"/img.jpg"}
                 className={`w-full object-contain rounded-lg`}
@@ -136,20 +169,9 @@ export default function Home() {
           <div
             className={`my-2 md:my-8 mx-2 w-5/6 md:w-1/4 items-center justify-evenly`}
           >
-            <div id="i-holder" className="w-3/4 mx-auto">
+            <div id="i-holder" className=" w-3/4 h-[15rem] mx-auto relative">
               <Image
-                alt=""
-                src={"/img.jpg"}
-                className={`w-full object-contain rounded-lg`}
-              />
-            </div>
-            <p className="mx-auto mt-1  ">Fast and easy delivery nationwide.</p>
-          </div>
-          <div
-            className={`my-2 md:my-8 mx-2 w-5/6 md:w-1/4 items-center justify-evenly`}
-          >
-            <div id="i-holder" className="w-3/4 mx-auto">
-              <Image
+                layout="fill"
                 alt=""
                 src={"/img.jpg"}
                 className={`w-full object-contain rounded-lg`}

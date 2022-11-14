@@ -13,9 +13,13 @@ const Product = () => {
         className={`flex flex-col md:flex-row items-center justify-evenly my-4`}
       >
         <div
-          className={`w-[80%] md:w-[40%] h-[30em] py-4 rounded-xl border border-pink-500`}
+          className={`w-[80%] md:w-[40%] h-[30em] py-4 rounded-xl border border-pink-500 relative`}
         >
-          <Image src="/ws2.jpg" className={`w-full h-full object-contain`} />
+          <Image
+            src="/ws2.jpg"
+            className={`w-full h-full object-contain`}
+            layout="fill"
+          />
         </div>
         {/* The image should be a slideshow */}
         <div className={`w-[90%] md:w-[40%]`}>

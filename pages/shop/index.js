@@ -10,8 +10,9 @@ const Shop = () => {
           <div
             className={`w-[10rem] h-[13rem] xl:w-[15%] bg-slate-500 p-2 rounded-xl m-2`}
           >
-            <div className={`w-full h-2/3`}>
+            <div className={`w-full h-2/3 relative`}>
               <Image
+                layout="fill"
                 src="/ws2.jpg"
                 alt="product"
                 title="Product Name"
@@ -24,8 +25,9 @@ const Shop = () => {
           <div
             className={`w-[10rem] h-[13rem] xl:w-[15%] bg-slate-500 p-2 rounded-xl m-2`}
           >
-            <div className={`w-full h-2/3`}>
+            <div className={`w-full h-2/3 relative`}>
               <Image
+                layout="fill"
                 src="/img.jpg"
                 alt="product"
                 title="Product Name"
@@ -38,8 +40,9 @@ const Shop = () => {
           <div
             className={`w-[10rem] h-[13rem] xl:w-[15%] bg-slate-500 p-2 rounded-xl m-2`}
           >
-            <div className={`w-full h-2/3`}>
+            <div className={`w-full h-2/3 relative`}>
               <Image
+                layout="fill"
                 src="/mobile-hero.jpg"
                 alt="product"
                 title="Product Name"
@@ -52,8 +55,9 @@ const Shop = () => {
           <div
             className={`w-[10rem] h-[13rem] xl:w-[15%] bg-slate-500 p-2 rounded-xl m-2`}
           >
-            <div className={`w-full h-2/3`}>
+            <div className={`w-full h-2/3 relative`}>
               <Image
+                layout="fill"
                 src="/desktop-hero.jpg"
                 alt="product"
                 title="Product Name"
@@ -66,8 +70,9 @@ const Shop = () => {
           <div
             className={`w-[10rem] h-[13rem] xl:w-[15%] bg-slate-500 p-2 rounded-xl m-2`}
           >
-            <div className={`w-full h-2/3`}>
+            <div className={`w-full h-2/3 relative`}>
               <Image
+                layout="fill"
                 src="/ws2.jpg"
                 alt="product"
                 title="Product Name"
@@ -80,8 +85,9 @@ const Shop = () => {
           <div
             className={`w-[10rem] h-[13rem] xl:w-[15%] bg-slate-500 p-2 rounded-xl m-2`}
           >
-            <div className={`w-full h-2/3`}>
+            <div className={`w-full h-2/3 relative`}>
               <Image
+                layout="fill"
                 src="/img.jpg"
                 alt="product"
                 title="Product Name"
@@ -94,8 +100,9 @@ const Shop = () => {
           <div
             className={`w-[10rem] h-[13rem] xl:w-[15%] bg-slate-500 p-2 rounded-xl m-2`}
           >
-            <div className={`w-full h-2/3`}>
+            <div className={`w-full h-2/3 relative`}>
               <Image
+                layout="fill"
                 src="/mobile-hero.jpg"
                 alt="product"
                 title="Product Name"
@@ -108,8 +115,9 @@ const Shop = () => {
           <div
             className={`w-[10rem] h-[13rem] xl:w-[15%] bg-slate-500 p-2 rounded-xl m-2`}
           >
-            <div className={`w-full h-2/3`}>
+            <div className={`w-full h-2/3 relative`}>
               <Image
+                layout="fill"
                 src="/desktop-hero.jpg"
                 alt="product"
                 title="Product Name"
@@ -131,8 +139,9 @@ const Shop = () => {
           <div
             className={`w-[10rem] h-[13rem] xl:w-[15%] bg-slate-500 p-2 rounded-xl m-2`}
           >
-            <div className={`w-full h-2/3`}>
+            <div className={`w-full h-2/3 relative`}>
               <Image
+                layout="fill"
                 src="/ws2.jpg"
                 alt="product"
                 title="Product Name"
@@ -145,8 +154,9 @@ const Shop = () => {
           <div
             className={`w-[10rem] h-[13rem] xl:w-[15%] bg-slate-500 p-2 rounded-xl m-2`}
           >
-            <div className={`w-full h-2/3`}>
+            <div className={`w-full h-2/3 relative`}>
               <Image
+                layout="fill"
                 src="/img.jpg"
                 alt="product"
                 title="Product Name"
@@ -159,8 +169,9 @@ const Shop = () => {
           <div
             className={`w-[10rem] h-[13rem] xl:w-[15%] bg-slate-500 p-2 rounded-xl m-2`}
           >
-            <div className={`w-full h-2/3`}>
+            <div className={`w-full h-2/3 relative`}>
               <Image
+                layout="fill"
                 src="/mobile-hero.jpg"
                 alt="product"
                 title="Product Name"
@@ -173,8 +184,9 @@ const Shop = () => {
           <div
             className={`w-[10rem] h-[13rem] xl:w-[15%] bg-slate-500 p-2 rounded-xl m-2`}
           >
-            <div className={`w-full h-2/3`}>
+            <div className={`w-full h-2/3 relative`}>
               <Image
+                layout="fill"
                 src="/desktop-hero.jpg"
                 alt="product"
                 title="Product Name"
@@ -187,8 +199,9 @@ const Shop = () => {
           <div
             className={`w-[10rem] h-[13rem] xl:w-[15%] bg-slate-500 p-2 rounded-xl m-2`}
           >
-            <div className={`w-full h-2/3`}>
+            <div className={`w-full h-2/3 relative`}>
               <Image
+                layout="fill"
                 src="/ws2.jpg"
                 alt="product"
                 title="Product Name"
@@ -201,8 +214,9 @@ const Shop = () => {
           <div
             className={`w-[10rem] h-[13rem] xl:w-[15%] bg-slate-500 p-2 rounded-xl m-2`}
           >
-            <div className={`w-full h-2/3`}>
+            <div className={`w-full h-2/3 relative`}>
               <Image
+                layout="fill"
                 src="/img.jpg"
                 alt="product"
                 title="Product Name"
@@ -215,8 +229,9 @@ const Shop = () => {
           <div
             className={`w-[10rem] h-[13rem] xl:w-[15%] bg-slate-500 p-2 rounded-xl m-2`}
           >
-            <div className={`w-full h-2/3`}>
+            <div className={`w-full h-2/3 relative`}>
               <Image
+                layout="fill"
                 src="/mobile-hero.jpg"
                 alt="product"
                 title="Product Name"
@@ -229,8 +244,9 @@ const Shop = () => {
           <div
             className={`w-[10rem] h-[13rem] xl:w-[15%] bg-slate-500 p-2 rounded-xl m-2`}
           >
-            <div className={`w-full h-2/3`}>
+            <div className={`w-full h-2/3 relative`}>
               <Image
+                layout="fill"
                 src="/desktop-hero.jpg"
                 alt="product"
                 title="Product Name"
