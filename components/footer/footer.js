@@ -46,7 +46,9 @@ const Footer = () => {
           </form>
         </div>
       </div>
-      <p className={`text-center text-sm font-mono`}>Copyright ©2022 Haleema</p>
+      <p className={`text-center text-sm font-mono`}>
+        Copyright ©2022 Savoir Care
+      </p>
     </div>
   );
 };

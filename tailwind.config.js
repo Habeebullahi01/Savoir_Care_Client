@@ -20,6 +20,10 @@ module.exports = {
         "mobile-hero": "url('/mobile-hero.jpg')",
         "desktop-hero": "url('/desktop-hero.jpg')",
       },
+      colors: {
+        primary: "#",
+        secondary: "#",
+      },
     },
   },
   plugins: [],

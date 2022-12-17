@@ -7,15 +7,15 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Haleema</title>
-        <meta name="description" content="An e-store for Haleema" />
+        <title>Savoir Care</title>
+        <meta name="description" content="Savoir Care. Simple and easy." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div
         className={`${styles.hero} bg-mobile-hero md:bg-desktop-hero bg-scroll bg-cover flex flex-col-reverse justify-evenly  md:flex-row md:justify-evenly  items-center h-full`}
       >
         <div id="heroText" className={`text-pink-700 md:w-1/2 `}>
-          <h1 className="text-3xl md:text-5xl font-bold">{`Haleemah's E-store`}</h1>
+          <h1 className="text-3xl md:text-5xl font-bold">{`Savoir Care`}</h1>
           <p className="text-lg font-medium my-6">
             Bringing you an affordable better life.
           </p>

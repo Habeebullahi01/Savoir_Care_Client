@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Menu from "./menu/menu";
 import style from "./nav.module.scss";
+// import { useAuth0 } from "@auth0/auth0-react";
 
 const Nav = ({ view }) => {
   // function showLinks() {
@@ -37,6 +38,8 @@ const Nav = ({ view }) => {
   //     changeView();
   //   });
   // }, []);
+  // const { isLoading, isAuthenticated, loginWithRedirect, logout, user } =
+  //   useAuth0();
 
   const MobileDisplay = () => {
     /* How to change css properties from within here. */
@@ -93,7 +96,7 @@ const Nav = ({ view }) => {
                   toggleMenu(false);
                 }}
               >
-                <Link href={"#"}> Account</Link>
+                {isAuthenticated ? "Logged In" : "Logged Out"}
               </li>
             </ul>
           </>
@@ -114,8 +117,26 @@ const Nav = ({ view }) => {
         <li>
           <Link href={"/contact"}> Contact</Link>
         </li>
-        <li>
-          <Link href={"#"}> Account</Link>
+        <li className={`${style.dropdown} relative`}>
+          Account
+          <div
+            className={`${style.dropdown_menu} hidden absolute w-[100%] bg-white`}
+          >
+            <p
+              onClick={() => {
+                // loginWithRedirect();
+              }}
+            >
+              Log in
+            </p>
+            <p
+              onClick={() => {
+                // logout();
+              }}
+            >
+              Log out
+            </p>
+          </div>
         </li>
       </ul>
     );
@@ -129,7 +150,7 @@ const Nav = ({ view }) => {
       {/* <div
         className={`background-blur ${style.backgroundBlur} blur bg-white`}
       ></div> */}
-      <h2 className="text-xl">Haleema</h2>
+      <h2 className="text-xl">Savoir Care</h2>
       {view === "mobile" ? MobileDisplay() : DesktopDisplay()}
     </div>
   );
