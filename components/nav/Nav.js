@@ -1,5 +1,7 @@
+import { useSafeLayoutEffect } from "@chakra-ui/react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { AuthContext } from "../authContext";
 import Menu from "./menu/menu";
 import style from "./nav.module.scss";
 // import { useAuth0 } from "@auth0/auth0-react";
@@ -40,6 +42,12 @@ const Nav = ({ view }) => {
   // }, []);
   // const { isLoading, isAuthenticated, loginWithRedirect, logout, user } =
   //   useAuth0();
+  const { auth, setAuth } = useContext(AuthContext);
+  const [isLoading, setLoading] = useState(false);
+  // useEffect(() => {
+  //   console.log(auth);
+  //   setLoading(true)
+  // });
 
   const MobileDisplay = () => {
     /* How to change css properties from within here. */
@@ -47,7 +55,6 @@ const Nav = ({ view }) => {
     const toggleMenu = (val) => {
       setMenuOpen(val);
     };
-    useEffect(() => {});
 
     return (
       <div className={`${style.navLinkContainer}`}>
@@ -122,20 +129,12 @@ const Nav = ({ view }) => {
           <div
             className={`${style.dropdown_menu} hidden absolute w-[100%] bg-white`}
           >
-            <p
-              onClick={() => {
-                // loginWithRedirect();
-              }}
-            >
-              Log in
-            </p>
-            <p
-              onClick={() => {
-                // logout();
-              }}
-            >
-              Log out
-            </p>
+            <Link href={"/auth/login"}>
+              <p>Log in</p>
+            </Link>
+            <Link href={"/auth/logout"}>
+              <p>Logout</p>
+            </Link>
           </div>
         </li>
       </ul>
@@ -151,7 +150,7 @@ const Nav = ({ view }) => {
         className={`background-blur ${style.backgroundBlur} blur bg-white`}
       ></div> */}
       <h2 className="text-xl">Savoir Care</h2>
-      {view === "mobile" ? MobileDisplay() : DesktopDisplay()}
+      {view === "mobile" ? <MobileDisplay /> : <DesktopDisplay />}
     </div>
   );
 };
