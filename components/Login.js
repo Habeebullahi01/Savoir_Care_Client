@@ -1,12 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./authContext";
 import axios from "axios";
-const Login = () => {
+import { useRouter } from "next/router";
+import Link from "next/link";
+const Login = ({ redPath }) => {
   const { auth, setAuth } = useContext(AuthContext);
   // useEffect(() => {
 
   // },[])
-
+  const router = useRouter();
   const [name, setName] = useState(" ");
   const [password, setPass] = useState("");
 
@@ -23,10 +25,11 @@ const Login = () => {
 
   const AuthRequest = (email, password) => {
     const data = { email: email, password: password };
-    console.log(data);
+    // console.log(data);
     // Send details to /login endpoint of the server
+    // .post("http://localhost:4000/auth/login", {
     axios
-      .post("http://localhost:4000/auth/login", {
+      .post("https://creepy-plum-elk.cyclic.app/auth/login", {
         email: email,
         password: password,
       })
@@ -34,6 +37,7 @@ const Login = () => {
         // console.log(res.data);
         if (res.data.msg === "Success") {
           setAuth(res.data.token);
+          router.push(redPath);
         }
       })
       .catch((err) => {
@@ -84,6 +88,12 @@ const Login = () => {
         />
         <button type="submit">Login</button>
       </form>
+      <div>
+        <p>
+          If you don't have an account yet, you can create one
+          <Link href={"/auth/signup"}>here</Link>.
+        </p>
+      </div>
     </>
   );
 };

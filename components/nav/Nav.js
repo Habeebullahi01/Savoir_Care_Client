@@ -65,7 +65,19 @@ const Nav = ({ view }) => {
         >
           MENU
         </button>
-
+        {/* <p className={`${style.dropdown} relative`}>
+          Account
+          <div
+            className={`${style.dropdown_menu} hidden absolute w-[100%] bg-white`}
+          >
+            <Link href={"/auth/login"}>
+              <p>Log in</p>
+            </Link>
+            <Link href={"/auth/logout"}>
+              <p>Logout</p>
+            </Link>
+          </div>
+        </p> */}
         {menuOpen ? (
           <>
             <ul className={[style.mobileMenu].join(" ")}>
@@ -98,13 +110,12 @@ const Nav = ({ view }) => {
               >
                 <Link href={"/contact"}> Contact</Link>
               </li>
-              <li
+              {/* <li
                 onClick={() => {
                   toggleMenu(false);
                 }}
               >
-                {isAuthenticated ? "Logged In" : "Logged Out"}
-              </li>
+              </li> */}
             </ul>
           </>
         ) : null}
@@ -134,6 +145,9 @@ const Nav = ({ view }) => {
             </Link>
             <Link href={"/auth/logout"}>
               <p>Logout</p>
+            </Link>
+            <Link href={"/auth/signup"}>
+              <p>Signup</p>
             </Link>
           </div>
         </li>

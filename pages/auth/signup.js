@@ -14,8 +14,9 @@ const SignUp = () => {
 
   const router = useRouter();
   const AuthRequest = ({ f_name, l_name, email, password }) => {
+    // .post("http://localhost:4000/auth/signup", {
     axios
-      .post("http://localhost:4000/auth/signup", {
+      .post("https://creepy-plum-elk.cyclic.app/auth/signup", {
         f_name: f_name,
         l_name: l_name,
         email: email,
