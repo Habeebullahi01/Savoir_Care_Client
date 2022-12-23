@@ -18,6 +18,7 @@ const ProductDisplay = ({ data }) => {
           src={data.imageURL ? data.imageURL : "/ws2.jpg"}
           className={`w-full h-full object-contain`}
           layout="fill"
+          alt={data.name ? data.name : "Product"}
         />
       </div>
       {/* The image should be a slideshow */}
@@ -142,7 +143,7 @@ const Product = () => {
         });
     };
     call();
-  }, [isAuthorized, route.query]);
+  }, [isAuthorized, route.query, auth, id]);
 
   // console.log(id.toString());
   // return (

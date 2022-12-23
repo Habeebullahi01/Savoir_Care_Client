@@ -90,7 +90,7 @@ const Login = ({ redPath }) => {
       </form>
       <div>
         <p>
-          If you don't have an account yet, you can create one
+          {`If you don\'t have an account yet, you can create one`}
           <Link href={"/auth/signup"}>here</Link>.
         </p>
       </div>

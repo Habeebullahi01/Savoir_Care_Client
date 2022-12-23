@@ -8,8 +8,8 @@ const About = () => {
     console.log(auth);
     return (
       <h1>
-        This is the About page. The story of this website. You can see this
-        because you're authenticated.
+        {`This is the About page. The story of this website. You can see this
+        because you\'re authenticated.`}
       </h1>
     );
   } else {

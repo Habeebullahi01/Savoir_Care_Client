@@ -9,7 +9,7 @@ const Logout = () => {
     setLoading(true);
     setAuth(null);
     setLoading(false);
-  });
+  }, [setAuth]);
   if (isLoading) {
     return (
       <>
