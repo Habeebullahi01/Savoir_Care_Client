@@ -21,6 +21,9 @@ const SignUp = () => {
         l_name: l_name,
         email: email,
         password: password,
+        headers: {
+          Origin: "http://localhost:3000",
+        },
       })
       .then((res) => {
         console.log(res.data);
@@ -45,62 +48,68 @@ const SignUp = () => {
   };
 
   return (
-    <form
-      method="POST"
-      onSubmit={async (e) => {
-        // console.log({ email: name, password: password });
-        // console.log(name);
-        AuthRequest(formBody);
+    <>
+      <Head>
+        <title>Savoir Care Signup</title>
+        <meta name="description" content="Savoir Care Login Page" />
+      </Head>
+      <form
+        method="POST"
+        onSubmit={async (e) => {
+          // console.log({ email: name, password: password });
+          // console.log(name);
+          AuthRequest(formBody);
 
-        e.preventDefault();
-      }}
-    >
-      <label htmlFor="f_name">
-        First Name
-        <input
-          type={"text"}
-          name={"f_name"}
-          id={"f_name"}
-          placeholder={"Firstname"}
-          onChange={(e) => handleChange(e, setFname)}
-        />
-      </label>
-      <label htmlFor="l_name">
-        Last Name
-        <input
-          type={"text"}
-          name={"l_name"}
-          id={"l_name"}
-          placeholder={"Lastname"}
-          onChange={(e) => handleChange(e, setLname)}
-        />
-      </label>
-      <label htmlFor="email">Email</label>
-      <input
-        type={"text"}
-        name={"email"}
-        id={"email"}
-        placeholder={"Example@email.com"}
-        // onChange={(e) => {
-        //   handleName(e.target.value);
-        //   // console.log(name);
-        // }}
-        value={email}
-        onChange={(e) => handleChange(e, setEmail)}
-      />
-      <label htmlFor="password">Password</label>
-      <input
-        type={"password"}
-        name={"password"}
-        id={"password"}
-        placeholder={"********"}
-        onChange={(e) => {
-          handleChange(e, setPass);
-          // console.log(password);
+          e.preventDefault();
         }}
-      />
-      <button type="submit">Signup</button>
-    </form>
+      >
+        <label htmlFor="f_name">
+          First Name
+          <input
+            type={"text"}
+            name={"f_name"}
+            id={"f_name"}
+            placeholder={"Firstname"}
+            onChange={(e) => handleChange(e, setFname)}
+          />
+        </label>
+        <label htmlFor="l_name">
+          Last Name
+          <input
+            type={"text"}
+            name={"l_name"}
+            id={"l_name"}
+            placeholder={"Lastname"}
+            onChange={(e) => handleChange(e, setLname)}
+          />
+        </label>
+        <label htmlFor="email">Email</label>
+        <input
+          type={"text"}
+          name={"email"}
+          id={"email"}
+          placeholder={"Example@email.com"}
+          // onChange={(e) => {
+          //   handleName(e.target.value);
+          //   // console.log(name);
+          // }}
+          value={email}
+          onChange={(e) => handleChange(e, setEmail)}
+        />
+        <label htmlFor="password">Password</label>
+        <input
+          type={"password"}
+          name={"password"}
+          id={"password"}
+          placeholder={"********"}
+          onChange={(e) => {
+            handleChange(e, setPass);
+            // console.log(password);
+          }}
+        />
+        <button type="submit">Signup</button>
+      </form>
+    </>
   );
 };
 

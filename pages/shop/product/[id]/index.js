@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { AddToCart } from "../../../../components/button";
 import Image from "next/image";
+import Head from "next/head";
 import axios from "axios";
 import { AuthContext } from "../../../../components/authContext";
 import { useContext, useEffect, useState } from "react";
@@ -112,10 +113,11 @@ const Product = () => {
     // console.log(auth);
     const call = async () => {
       await axios
-        .get(`https://creepy-plum-elk.cyclic.app/products/${id}`, {
+        .get(`https://e-store-server.cyclic.app/products/${id}`, {
           // .get(`http://localhost:4000/products/${id}`, {
           headers: {
             Authorization: auth,
+            Origin: "http://localhost:3000",
           },
         })
         .then(async (res) => {
@@ -161,7 +163,16 @@ const Product = () => {
   //   </>
   // );
   if (isAuthorized == "true") {
-    return <ProductDisplay data={data} />;
+    return (
+      <>
+        <Head>
+          <title>{data.name}</title>
+          <meta name="description" content="Savoir Care. Simple and easy." />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <ProductDisplay data={data} />
+      </>
+    );
   }
   if (isAuthorized == "pending") {
     return <p>Loading...</p>;

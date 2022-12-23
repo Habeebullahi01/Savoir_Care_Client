@@ -29,9 +29,12 @@ const Login = ({ redPath }) => {
     // Send details to /login endpoint of the server
     // .post("http://localhost:4000/auth/login", {
     axios
-      .post("https://creepy-plum-elk.cyclic.app/auth/login", {
+      .post("https://e-store-server.cyclic.app/auth/login", {
         email: email,
         password: password,
+        headers: {
+          Origin: "http://localhost:3000",
+        },
       })
       .then((res) => {
         // console.log(res.data);
