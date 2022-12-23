@@ -1,4 +1,5 @@
 import axios from "axios";
+import Head from "next/head";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
@@ -16,7 +17,7 @@ const SignUp = () => {
   const AuthRequest = ({ f_name, l_name, email, password }) => {
     // .post("http://localhost:4000/auth/signup", {
     axios
-      .post("https://creepy-plum-elk.cyclic.app/auth/signup", {
+      .post("https://e-store-server.cyclic.app/auth/signup", {
         f_name: f_name,
         l_name: l_name,
         email: email,
