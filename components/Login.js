@@ -29,11 +29,12 @@ const Login = ({ redPath }) => {
     // Send details to /login endpoint of the server
     // .post("http://localhost:4000/auth/login", {
     axios
-      .post("https://e-store-server.cyclic.app/auth/login", {
+      .post("http://localhost:4000/auth/login", {
+        // .post("https://e-store-server.cyclic.app/auth/login", {
         email: email,
         password: password,
         headers: {
-          Origin: "http://localhost:3000",
+          Origin: "https://e-store-client.vercel.app/",
         },
       })
       .then((res) => {
@@ -54,48 +55,67 @@ const Login = ({ redPath }) => {
 
   return (
     <>
-      <p>Please Log In</p>
-      <form
-        method="POST"
-        onSubmit={async (e) => {
-          // console.log({ email: name, password: password });
-          // console.log(name);
-          AuthRequest(name, password);
+      <div className={`w-full flex flex-row h-[90vh]`}>
+        <div className={`form-holder w-full sm:w-1/4 h-full flex flex-col`}>
+          <form
+            method="POST"
+            onSubmit={async (e) => {
+              // console.log({ email: name, password: password });
+              // console.log(name);
+              AuthRequest(name, password);
 
-          e.preventDefault();
-        }}
-      >
-        <label htmlFor="name">Email</label>
-        <input
-          type={"text"}
-          name={"email"}
-          id={"name"}
-          placeholder={"Example@email.com"}
-          // onChange={(e) => {
-          //   handleName(e.target.value);
-          //   // console.log(name);
-          // }}
-          value={name}
-          onChange={handleName}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type={"password"}
-          name={"password"}
-          id={"password"}
-          placeholder={"********"}
-          onChange={(e) => {
-            handlePassword(e);
-            // console.log(password);
-          }}
-        />
-        <button type="submit">Login</button>
-      </form>
-      <div>
-        <p>
-          {`If you don\'t have an account yet, you can create one`}
-          <Link href={"/auth/signup"}>here</Link>.
-        </p>
+              e.preventDefault();
+            }}
+            className={`flex flex-col items-center`}
+          >
+            <label htmlFor="name" className="w-5/6">
+              Email
+              <input
+                type={"text"}
+                name={"email"}
+                id={"name"}
+                placeholder={"Example@email.com"}
+                // onChange={(e) => {
+                //   handleName(e.target.value);
+                //   // console.log(name);
+                // }}
+                value={name}
+                onChange={handleName}
+                required={true}
+                className={`w-full p-1 my-2  rounded-[5px]  block`}
+              />
+            </label>
+            <label htmlFor="password" className="w-5/6">
+              Password
+              <input
+                type={"password"}
+                name={"password"}
+                id={"password"}
+                placeholder={"********"}
+                onChange={(e) => {
+                  handlePassword(e);
+                  // console.log(password);
+                }}
+                required
+                className={`w-full p-1 my-2 rounded-[5px] block`}
+              />
+            </label>
+            <button
+              type="submit"
+              className={`bg-purple-200 p-2 hover:bg-purple-400 w-1/3 self-center rounded`}
+            >
+              Login
+            </button>
+          </form>
+          <p>
+            {`If you don\'t have an account yet, you can create one`}
+            <Link href={"/auth/signup"}> here</Link>.
+          </p>
+        </div>
+
+        <div
+          className={`image_holder sm:w-3/4 sm:h-full sm:block bg-slate-600 hidden`}
+        ></div>
       </div>
     </>
   );

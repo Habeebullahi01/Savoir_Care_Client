@@ -55,6 +55,10 @@ const Nav = ({ view }) => {
     const toggleMenu = (val) => {
       setMenuOpen(val);
     };
+    const [accPanel, viewAccPanel] = useState(false);
+    const toggleAccPanel = (val) => {
+      viewAccPanel(val);
+    };
 
     return (
       <div className={`${style.navLinkContainer}`}>
@@ -64,6 +68,13 @@ const Nav = ({ view }) => {
           }}
         >
           MENU
+        </button>
+        <button
+          onClick={() => {
+            toggleAccPanel(true);
+          }}
+        >
+          Account
         </button>
         {/* <p className={`${style.dropdown} relative`}>
           Account
@@ -116,6 +127,15 @@ const Nav = ({ view }) => {
                 }}
               >
               </li> */}
+            </ul>
+          </>
+        ) : null}
+        {accPanel ? (
+          <>
+            <ul>
+              <li>
+                <Link href={"/auth/login"}>Login</Link>
+              </li>
             </ul>
           </>
         ) : null}

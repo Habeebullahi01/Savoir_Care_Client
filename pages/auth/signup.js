@@ -2,6 +2,7 @@ import axios from "axios";
 import Head from "next/head";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -17,7 +18,8 @@ const SignUp = () => {
   const AuthRequest = ({ f_name, l_name, email, password }) => {
     // .post("http://localhost:4000/auth/signup", {
     axios
-      .post("https://e-store-server.cyclic.app/auth/signup", {
+      // .post("https://e-store-server.cyclic.app/auth/signup", {
+      .post("http://localhost:4000/auth/signup", {
         f_name: f_name,
         l_name: l_name,
         email: email,
@@ -54,62 +56,94 @@ const SignUp = () => {
         <title>Savoir Care Signup</title>
         <meta name="description" content="Savoir Care Login Page" />
       </Head>
-      <form
-        method="POST"
-        onSubmit={async (e) => {
-          // console.log({ email: name, password: password });
-          // console.log(name);
-          AuthRequest(formBody);
 
-          e.preventDefault();
-        }}
-      >
-        <label htmlFor="f_name">
-          First Name
-          <input
-            type={"text"}
-            name={"f_name"}
-            id={"f_name"}
-            placeholder={"Firstname"}
-            onChange={(e) => handleChange(e, setFname)}
-          />
-        </label>
-        <label htmlFor="l_name">
-          Last Name
-          <input
-            type={"text"}
-            name={"l_name"}
-            id={"l_name"}
-            placeholder={"Lastname"}
-            onChange={(e) => handleChange(e, setLname)}
-          />
-        </label>
-        <label htmlFor="email">Email</label>
-        <input
-          type={"text"}
-          name={"email"}
-          id={"email"}
-          placeholder={"Example@email.com"}
-          // onChange={(e) => {
-          //   handleName(e.target.value);
-          //   // console.log(name);
-          // }}
-          value={email}
-          onChange={(e) => handleChange(e, setEmail)}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type={"password"}
-          name={"password"}
-          id={"password"}
-          placeholder={"********"}
-          onChange={(e) => {
-            handleChange(e, setPass);
-            // console.log(password);
-          }}
-        />
-        <button type="submit">Signup</button>
-      </form>
+      <div className={`w-full flex flex-row h-[90vh]`}>
+        <div className={`form-holder w-full sm:w-1/4 h-full flex flex-col`}>
+          <form
+            method="POST"
+            onSubmit={async (e) => {
+              // console.log({ email: name, password: password });
+              // console.log(name);
+              AuthRequest(formBody);
+
+              e.preventDefault();
+            }}
+            className={`flex flex-col items-center`}
+          >
+            <label htmlFor="f_name" className="w-5/6">
+              First Name
+              <input
+                type={"text"}
+                name={"f_name"}
+                id={"f_name"}
+                placeholder={"Firstname"}
+                required
+                onChange={(e) => handleChange(e, setFname)}
+                className={`w-full p-1 my-2 rounded-[5px] block`}
+              />
+            </label>
+
+            <label htmlFor="l_name" className="w-5/6">
+              Last Name
+              <input
+                type={"text"}
+                name={"l_name"}
+                id={"l_name"}
+                placeholder={"Lastname"}
+                onChange={(e) => handleChange(e, setLname)}
+                required
+                className={`w-full block p-1 my-2 rounded-[5px]`}
+              />
+            </label>
+
+            <label htmlFor="email" className="w-5/6">
+              Email
+              <input
+                type={"text"}
+                name={"email"}
+                id={"email"}
+                placeholder={"Example@email.com"}
+                // onChange={(e) => {
+                //   handleName(e.target.value);
+                //   // console.log(name);
+                // }}
+                value={email}
+                onChange={(e) => handleChange(e, setEmail)}
+                required
+                className={`w-full block p-1 my-2 rounded-[5px]`}
+              />
+            </label>
+            <label htmlFor="password" className="w-5/6">
+              Password
+              <input
+                type={"password"}
+                name={"password"}
+                id={"password"}
+                placeholder={"********"}
+                onChange={(e) => {
+                  handleChange(e, setPass);
+                  // console.log(password);
+                }}
+                required
+                className={`w-full block p-1 my-2 rounded-[5px]`}
+              />
+            </label>
+            <button
+              type="submit"
+              className={`bg-purple-200 p-2 hover:bg-purple-400 w-1/3 self-center rounded`}
+            >
+              Signup
+            </button>
+          </form>
+          <p>
+            {`If you already have an account, you can login`}
+            <Link href={"/auth/login"}> here</Link>.
+          </p>
+        </div>
+        <div
+          className={`image_holder sm:w-3/4 sm:h-full sm:block bg-slate-600 hidden`}
+        ></div>
+      </div>
     </>
   );
 };
