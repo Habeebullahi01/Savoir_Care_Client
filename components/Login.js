@@ -9,7 +9,7 @@ const Login = ({ redPath }) => {
 
   // },[])
   const router = useRouter();
-  const [name, setName] = useState(" ");
+  const [name, setName] = useState("");
   const [password, setPass] = useState("");
 
   const handleName = (e) => {
@@ -29,8 +29,8 @@ const Login = ({ redPath }) => {
     // Send details to /login endpoint of the server
     // .post("http://localhost:4000/auth/login", {
     axios
-      .post("http://localhost:4000/auth/login", {
-        // .post("https://e-store-server.cyclic.app/auth/login", {
+      // .post("http://localhost:4000/auth/login", {
+      .post("https://e-store-server.cyclic.app/auth/login", {
         email: email,
         password: password,
         headers: {
@@ -66,8 +66,13 @@ const Login = ({ redPath }) => {
 
               e.preventDefault();
             }}
-            className={`flex flex-col items-center`}
+            className={`flex flex-col items-center mt-[5rem]`}
           >
+            <p
+              className={`text-[2rem] italic font-semibold mb-4 text-purple-300`}
+            >
+              Login to continue
+            </p>
             <label htmlFor="name" className="w-5/6">
               Email
               <input

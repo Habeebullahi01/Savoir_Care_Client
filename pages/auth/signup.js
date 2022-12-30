@@ -18,8 +18,8 @@ const SignUp = () => {
   const AuthRequest = ({ f_name, l_name, email, password }) => {
     // .post("http://localhost:4000/auth/signup", {
     axios
-      // .post("https://e-store-server.cyclic.app/auth/signup", {
-      .post("http://localhost:4000/auth/signup", {
+      .post("https://e-store-server.cyclic.app/auth/signup", {
+        // .post("http://localhost:4000/auth/signup", {
         f_name: f_name,
         l_name: l_name,
         email: email,
@@ -57,8 +57,10 @@ const SignUp = () => {
         <meta name="description" content="Savoir Care Login Page" />
       </Head>
 
-      <div className={`w-full flex flex-row h-[90vh]`}>
-        <div className={`form-holder w-full sm:w-1/4 h-full flex flex-col`}>
+      <div className={`w-full flex flex-row sm:h-[90vh]`}>
+        <div
+          className={`form-holder w-full sm:w-1/4 h-full flex flex-col mb-20 sm:m-0`}
+        >
           <form
             method="POST"
             onSubmit={async (e) => {
@@ -68,8 +70,13 @@ const SignUp = () => {
 
               e.preventDefault();
             }}
-            className={`flex flex-col items-center`}
+            className={`flex flex-col items-center sm:mt-20`}
           >
+            <p
+              className={`text-[2rem] italic font-semibold mb-4 text-purple-300`}
+            >
+              Signup to continue
+            </p>
             <label htmlFor="f_name" className="w-5/6">
               First Name
               <input
