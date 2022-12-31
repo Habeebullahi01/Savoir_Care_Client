@@ -1,6 +1,7 @@
 import { useSafeLayoutEffect } from "@chakra-ui/react";
 import Link from "next/link";
 import { useEffect, useState, useContext } from "react";
+import ClickAwayListener from "react-click-away-listener";
 import { AuthContext } from "../authContext";
 import Menu from "./menu/menu";
 import style from "./nav.module.scss";
@@ -59,6 +60,10 @@ const Nav = ({ view }) => {
     const toggleAccPanel = (val) => {
       viewAccPanel(val);
     };
+    const handleClickAway = () => {
+      setMenuOpen(false);
+      viewAccPanel(false);
+    };
 
     return (
       <div className={`${style.navLinkContainer}`}>
@@ -73,6 +78,7 @@ const Nav = ({ view }) => {
           onClick={() => {
             toggleAccPanel(true);
           }}
+          className={`relative`}
         >
           Account
         </button>
@@ -91,52 +97,62 @@ const Nav = ({ view }) => {
         </p> */}
         {menuOpen ? (
           <>
-            <ul className={[style.mobileMenu].join(" ")}>
-              <button
-                onClick={() => {
-                  toggleMenu(false);
-                }}
-                className="text-2xl"
-              >
-                CLOSE
-              </button>
-              <li
-                onClick={() => {
-                  toggleMenu(false);
-                }}
-              >
-                <Link href="/"> Home</Link>
-              </li>
-              <li
-                onClick={() => {
-                  toggleMenu(false);
-                }}
-              >
-                <Link href={"/shop"}> Shop</Link>
-              </li>
-              <li
-                onClick={() => {
-                  toggleMenu(false);
-                }}
-              >
-                <Link href={"/contact"}> Contact</Link>
-              </li>
-              {/* <li
+            <ClickAwayListener onClickAway={handleClickAway}>
+              <ul className={[style.mobileMenu].join(" ")}>
+                <button
+                  onClick={() => {
+                    toggleMenu(false);
+                  }}
+                  className="text-2xl"
+                >
+                  CLOSE
+                </button>
+                <li
+                  onClick={() => {
+                    toggleMenu(false);
+                  }}
+                >
+                  <Link href="/"> Home</Link>
+                </li>
+                <li
+                  onClick={() => {
+                    toggleMenu(false);
+                  }}
+                >
+                  <Link href={"/shop"}> Shop</Link>
+                </li>
+                <li
+                  onClick={() => {
+                    toggleMenu(false);
+                  }}
+                >
+                  <Link href={"/contact"}> Contact</Link>
+                </li>
+                {/* <li
                 onClick={() => {
                   toggleMenu(false);
                 }}
               >
               </li> */}
-            </ul>
+              </ul>
+            </ClickAwayListener>
           </>
         ) : null}
         {accPanel ? (
           <>
-            <ul>
-              <li>
-                <Link href={"/auth/login"}>Login</Link>
-              </li>
-            </ul>
+            <ClickAwayListener onClickAway={handleClickAway}>
+              <ul className={`bg-purple-200 absolute p-2 right-0`}>
+                <li>
+                  <Link href={"/auth/login"}>Login</Link>
+                </li>
+                <li>
+                  <Link href={"/auth/logout"}>Logout</Link>
+                </li>
+                <li>
+                  <Link href={"/auth/signup"}>Signup</Link>
+                </li>
+              </ul>
+            </ClickAwayListener>
           </>
         ) : null}
       </div>
@@ -158,17 +174,17 @@ const Nav = ({ view }) => {
         <li className={`${style.dropdown} relative`}>
           Account
           <div
-            className={`${style.dropdown_menu} hidden absolute w-[100%] bg-white`}
+            className={`${style.dropdown_menu} hidden absolute  bg-white p-2`}
           >
-            <Link href={"/auth/login"}>
-              <p>Log in</p>
-            </Link>
-            <Link href={"/auth/logout"}>
-              <p>Logout</p>
-            </Link>
-            <Link href={"/auth/signup"}>
-              <p>Signup</p>
-            </Link>
+            <p>
+              <Link href={"/auth/login"}>Log in</Link>
+            </p>
+            <p>
+              <Link href={"/auth/logout"}>Logout</Link>
+            </p>
+            <p>
+              <Link href={"/auth/signup"}>Signup</Link>
+            </p>
           </div>
         </li>
       </ul>

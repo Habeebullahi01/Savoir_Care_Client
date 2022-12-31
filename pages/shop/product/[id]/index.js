@@ -117,7 +117,7 @@ const Product = () => {
           // .get(`http://localhost:4000/products/${id}`, {
           headers: {
             Authorization: auth,
-            Origin: "http://localhost:3000",
+            // Origin: "http://localhost:3000",
           },
         })
         .then(async (res) => {

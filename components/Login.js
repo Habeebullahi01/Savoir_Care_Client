@@ -11,6 +11,7 @@ const Login = ({ redPath }) => {
   const router = useRouter();
   const [name, setName] = useState("");
   const [password, setPass] = useState("");
+  const [authError, setAuthError] = useState(null);
 
   const handleName = (e) => {
     setName(e.target.value);
@@ -34,21 +35,29 @@ const Login = ({ redPath }) => {
         email: email,
         password: password,
         headers: {
-          Origin: "https://e-store-client.vercel.app/",
+          Origin: "https://e-store-client.vercel.app",
         },
       })
       .then((res) => {
         // console.log(res.data);
-        if (res.data.msg === "Success") {
+        if (res.data.auth) {
           setAuth(res.data.token);
           router.push(redPath);
+        } else {
+          setAuthError("Check your credentials.");
         }
       })
       .catch((err) => {
         if (err.response) {
-          console.log("Error fetching auth: " + err.response.data);
+          console.log(err.response.data);
+          if (!err.response.data.auth) {
+            setAuthError("Check your credentials.");
+          } else {
+            console.log("Error fetching auth: " + err.response.data);
+          }
+        } else {
+          console.log(err.message);
         }
-        console.log(err.message);
       });
     // redirect somewhere?
   };
@@ -73,6 +82,11 @@ const Login = ({ redPath }) => {
             >
               Login to continue
             </p>
+            <div
+              className={`error-container w-full italic bg-slate-500 text-white text-center`}
+            >
+              <p>{authError}</p>
+            </div>
             <label htmlFor="name" className="w-5/6">
               Email
               <input

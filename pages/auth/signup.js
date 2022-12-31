@@ -9,6 +9,7 @@ const SignUp = () => {
   const [password, setPass] = useState("");
   const [fName, setFname] = useState("");
   const [lName, setLname] = useState("");
+  const [authError, setAuthError] = useState(null);
 
   const handleChange = (e, setterFuntion) => {
     setterFuntion(e.target.value);
@@ -25,18 +26,27 @@ const SignUp = () => {
         email: email,
         password: password,
         headers: {
-          Origin: "http://localhost:3000",
+          Origin: "https://e-store-client.vercel.app",
         },
       })
       .then((res) => {
         console.log(res.data);
-        if (res.status === 200) {
-          router.push("/auth/login");
+        if (res.data.auth) {
+          router.push("/");
         }
       })
       .catch((e) => {
         if (e.response) {
-          console.log(e.response);
+          if (!e.response.data.auth) {
+            setAuthError(
+              <p className={`p-2`}>
+                The Email you entered is already in use. You can{" "}
+                <Link href={"/auth/login"}> proceed to Login</Link> instead.
+              </p>
+            );
+          } else {
+            console.log(e.response);
+          }
         } else {
           console.log(e.message);
         }
@@ -135,6 +145,9 @@ const SignUp = () => {
                 className={`w-full block p-1 my-2 rounded-[5px]`}
               />
             </label>
+            <div className={`error-container w-full bg-slate-400 italic my-2`}>
+              {authError}
+            </div>
             <button
               type="submit"
               className={`bg-purple-200 p-2 hover:bg-purple-400 w-1/3 self-center rounded`}
