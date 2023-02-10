@@ -1,10 +1,12 @@
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "./authContext";
+import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { useCookies } from "react-cookie";
+
 const Login = ({ redPath }) => {
-  const { auth, setAuth } = useContext(AuthContext);
+  // const { auth, setAuth } = useContext(AuthContext);
+  const [cookie, setCookie] = useCookies(["auth"]);
   // useEffect(() => {
 
   // },[])
@@ -41,7 +43,12 @@ const Login = ({ redPath }) => {
       .then((res) => {
         // console.log(res.data);
         if (res.data.auth) {
-          setAuth(res.data.token);
+          // setAuth(res.data.token);
+          setCookie("auth", res.data.token, {
+            path: "/",
+            maxAge: 3600,
+            sameSite: true,
+          });
           router.push(redPath);
         } else {
           setAuthError("Check your credentials.");

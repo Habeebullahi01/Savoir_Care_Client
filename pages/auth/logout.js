@@ -1,15 +1,19 @@
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../components/authContext";
+import { useCookies } from "react-cookie";
 
 const Logout = () => {
   const { setAuth } = useContext(AuthContext);
   const [isLoading, setLoading] = useState(false);
+  const [cookie, setCookie] = useCookies(["auth"]);
   useEffect(() => {
     setLoading(true);
-    setAuth(null);
+    // setAuth(null);
+    setCookie("auth", null);
     setLoading(false);
   }, [setAuth]);
+  const delCookie = () => {};
   if (isLoading) {
     return (
       <>
@@ -29,6 +33,13 @@ const Logout = () => {
       </>
     );
   }
+  // return (
+  //   <p>Dear User, clock here to Logout.</p>
+  // )
 };
+
+// Logout.getInitialProps = async ({req,res}) => {
+
+// }
 
 export default Logout;

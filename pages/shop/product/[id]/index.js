@@ -3,9 +3,10 @@ import { AddToCart } from "../../../../components/button";
 import Image from "next/image";
 import Head from "next/head";
 import axios from "axios";
-import { AuthContext } from "../../../../components/authContext";
+// import { AuthContext } from "../../../../components/authContext";
 import { useContext, useEffect, useState } from "react";
 import Login from "../../../../components/Login";
+import { parseCookies } from "../../../../helpers";
 
 const ProductDisplay = ({ data }) => {
   return (
@@ -96,13 +97,13 @@ const ProductDisplay = ({ data }) => {
 };
 
 // const Product = ({ data, isAuthorized }) => {
-const Product = () => {
+const Product = ({ props }) => {
   const route = useRouter();
   const id = route.query.id;
   const [data, setData] = useState({});
   const [isAuthorized, setAuthorized] = useState("pending");
   // isAuthorized: "true", "pending", "false"
-  const { auth } = useContext(AuthContext);
+  // const { auth } = useContext(AuthContext);
   let path;
   if (route.isReady) {
     path = route.asPath;
@@ -116,7 +117,8 @@ const Product = () => {
         .get(`https://e-store-server.cyclic.app/products/${id}`, {
           // .get(`http://localhost:4000/products/${id}`, {
           headers: {
-            Authorization: auth,
+            Authorization: props.auth,
+            // Authorization: auth,
             // Origin: "http://localhost:3000",
           },
         })
@@ -145,7 +147,7 @@ const Product = () => {
         });
     };
     call();
-  }, [isAuthorized, route.query, auth, id]);
+  }, [isAuthorized, route.query, id]);
 
   // console.log(id.toString());
   // return (
@@ -185,6 +187,18 @@ const Product = () => {
       </>
     );
   }
+};
+
+Product.getInitialProps = async ({ req, res }) => {
+  const data = parseCookies(req);
+
+  if (res) {
+    if (Object.keys(data).length === 0 && data.constructor === Object) {
+      res.writeHead(301, { location: "/" });
+      res.end();
+    }
+  }
+  return { props: data && data };
 };
 
 export default Product;
