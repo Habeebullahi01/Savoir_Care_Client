@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { useCookies } from "react-cookie";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -10,6 +11,7 @@ const SignUp = () => {
   const [fName, setFname] = useState("");
   const [lName, setLname] = useState("");
   const [authError, setAuthError] = useState(null);
+  const [cookie, setCookie] = useCookies(["auth"]);
 
   const handleChange = (e, setterFuntion) => {
     setterFuntion(e.target.value);
@@ -32,6 +34,7 @@ const SignUp = () => {
       .then((res) => {
         console.log(res.data);
         if (res.data.auth) {
+          setCookie("auth", res.data.token);
           router.push("/");
         }
       })

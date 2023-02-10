@@ -3,6 +3,7 @@ import Nav from "../components/nav/Nav";
 import Footer from "../components/footer/footer";
 import { useState, useEffect, useContext } from "react";
 import { AuthContextProvider } from "../components/authContext";
+import { CookiesProvider } from "react-cookie";
 // import { Auth0Provider } from "@auth0/auth0-react";
 
 function MyApp({ Component, pageProps }) {
@@ -26,9 +27,11 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <AuthContextProvider>
-        <Nav view={display} />
-        <Component {...pageProps} />
-        <Footer />
+        <CookiesProvider>
+          <Nav view={display} />
+          <Component {...pageProps} />
+          <Footer />
+        </CookiesProvider>
       </AuthContextProvider>
     </>
   );
