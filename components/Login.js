@@ -33,7 +33,7 @@ const Login = ({ redPath }) => {
     // .post("http://localhost:4000/auth/login", {
     axios
       // .post("http://localhost:4000/auth/login", {
-      .post("https://e-store-server.cyclic.app/auth/login", {
+      .post("https://temporal-state-363009.rj.r.appspot.com/auth/login", {
         email: email,
         password: password,
         headers: {
@@ -135,7 +135,10 @@ const Login = ({ redPath }) => {
           </form>
           <p>
             {`If you don\'t have an account yet, you can create one`}
-            <Link href={"/auth/signup"}> here</Link>.
+            <span className="text-blue-900">
+              <Link href={"/auth/signup"}> here </Link>
+            </span>
+            .
           </p>
         </div>
 

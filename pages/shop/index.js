@@ -70,7 +70,7 @@ export async function getServerSideProps() {
   // console.log(data.products[0]._id);
   let data;
   await axios
-    .get("https://e-store-server.cyclic.app/products", {
+    .get("https://temporal-state-363009.rj.r.appspot.com/products", {
       // .get("http://localhost:4000/products", {
       headers: {
         Origin: "http://localhost:3000",
