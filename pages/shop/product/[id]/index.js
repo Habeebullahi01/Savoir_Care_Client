@@ -114,7 +114,8 @@ const Product = ({ props }) => {
     // console.log(auth);
     const call = async () => {
       await axios
-        .get(`https://e-store-server.cyclic.app/products/${id}`, {
+        .get(`https://temporal-state-363009.rj.r.appspot.com/products/${id}`, {
+          // .get(`https://e-store-server.cyclic.app/products/${id}`, {
           // .get(`http://localhost:4000/products/${id}`, {
           headers: {
             Authorization: props.auth,

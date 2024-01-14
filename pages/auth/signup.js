@@ -21,7 +21,7 @@ const SignUp = () => {
   const AuthRequest = ({ f_name, l_name, email, password }) => {
     // .post("http://localhost:4000/auth/signup", {
     axios
-      .post("https://e-store-server.cyclic.app/auth/signup", {
+      .post("https://temporal-state-363009.rj.r.appspot.com/auth/signup", {
         // .post("http://localhost:4000/auth/signup", {
         f_name: f_name,
         l_name: l_name,
@@ -160,7 +160,10 @@ const SignUp = () => {
           </form>
           <p>
             {`If you already have an account, you can login`}
-            <Link href={"/auth/login"}> here</Link>.
+            <span className="text-blue-900">
+              <Link href={"/auth/login"}> here </Link>
+            </span>
+            .
           </p>
         </div>
         <div
